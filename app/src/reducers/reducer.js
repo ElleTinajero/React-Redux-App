@@ -6,7 +6,6 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
-        default:
             case 'FETCH_QUOTE_START':
                 return {
                     ...state,
@@ -19,7 +18,13 @@ export const reducer = (state = initialState, action) => {
                     quote: action.payload,
                     error:''
                 }
-                
-            return state;
+            // case 'FETCH_QUOTE_FAILURE':
+            //     return {
+            //         ...state,
+            //         isFetching: false,
+            //         error: action.payload
+            //     }
+                default:
+                   return state;        
     }
 }
